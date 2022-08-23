@@ -1,3 +1,6 @@
-const reducer = (state, action) => state
+import user from "./user"
+import contacts from "./contacts"
+import activeUserId from "./activeUserId"
+import { combineReducers } from "redux"
 
-export default reducer
+export default combineReducers({user, contacts, activeUserId})

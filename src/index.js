@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './Containers/App';
 import store from "./store/"
 import fancyLog from "./utilities/"
 import reportWebVitals from './reportWebVitals';

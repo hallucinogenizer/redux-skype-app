@@ -1,15 +1,24 @@
-const shortid = require("shortid"); // shortid.generate() returns a unique "short" id
-const txtgen = require("txtgen"); // txtgen.sentence() returns random "readable" sentences
-const faker = require("faker"); // faker is used for generating random fake data.
-const _ = require("lodash"); // lodash is a utility lib for Javascript
+import {
+  randEmail,
+  randFullName,
+  randAvatar,
+  randQuote,
+  randAlphaNumeric,
+  randSentence,
+  randBoolean,
+  incrementalNumber,
+} from "@ngneat/falso";
+import _ from "lodash" // lodash is a utility lib for Javascript
+
+const factory = incrementalNumber()
 
 const users = generateUsers(10);
 export const contacts = _.mapKeys(users, "user_id");
-export const getMessages = messagesPerUser => {
+export const getMessages = (messagesPerUser) => {
   let messages = {};
-  _.forEach(users, user => {
+  _.forEach(users, (user) => {
     messages[user.user_id] = {
-      ..._.mapKeys(generateMsgs(messagesPerUser), "number")
+      ..._.mapKeys(generateMsgs(messagesPerUser), "number"),
     };
   });
   return messages;
@@ -21,7 +30,7 @@ export const state = {
   messages: getMessages(10),
   typing: "",
   contacts,
-  activeUserId: null
+  activeUserId: null,
 };
 
 /**
@@ -29,11 +38,11 @@ export const state = {
  */
 export function generateUser() {
   return {
-    name: faker.name.findName(),
-    email: faker.internet.email(),
-    profile_pic: faker.internet.avatar(),
-    status: txtgen.sentence(),
-    user_id: shortid.generate()
+    name: randFullName(),
+    email: randEmail(),
+    profile_pic: `${randAvatar()}?${factory()}`,
+    status: randQuote(),
+    user_id: randAlphaNumeric({ length: 6 }),
   };
 }
 /**
@@ -42,8 +51,8 @@ export function generateUser() {
 function generateMsg(number) {
   return {
     number,
-    text: txtgen.sentence(),
-    is_user_msg: faker.datatype.boolean()
+    text: randSentence(),
+    is_user_msg: randBoolean(),
   };
 }
 /**
