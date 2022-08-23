@@ -1,0 +1,1 @@
+export const Main = () => <main className="flex-1">Main Stuff</main>
