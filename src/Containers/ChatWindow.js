@@ -1,6 +1,7 @@
 import store from "../store"
 import Header from "../Components/Header"
 import Chats from "../Components/Chats"
+import MessageInput from "./MessageInput"
 import _ from "lodash"
 
 export default function ChatWindow({activeUserId}) {
@@ -11,6 +12,7 @@ export default function ChatWindow({activeUserId}) {
         <div className="text-white">
             <Header user={activeUser}/>
             <Chats messages={_.values(activeChats)}/>
+            <MessageInput/>
         </div>
     )
 }
