@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# Project Description
+This was a practice project I built for an Educative.io course on Redux. It is an offline chat-application. Its intent is not to be functional online, rather it is to learn best practices when it comes to managing state with Redux.
+
+# How to run this project
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Clone the repository and run `npm install` to install the dependencies.
 
 ## Available Scripts
 
