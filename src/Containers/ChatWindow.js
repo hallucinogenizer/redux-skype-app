@@ -9,7 +9,7 @@ export default function ChatWindow({activeUserId}) {
     const activeUser = contacts[activeUserId]
     const activeChats = messages[activeUserId]
     return (
-        <div className="text-white">
+        <div className="text-white h-screen flex flex-col">
             <Header user={activeUser}/>
             <Chats messages={_.values(activeChats)}/>
             <MessageInput/>
