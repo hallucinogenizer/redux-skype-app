@@ -1,5 +1,5 @@
 import Empty from "./Empty"
-import ChatWindow from "./ChatWindow"
+import ChatWindow from "../Containers/ChatWindow"
 
 export const Main = ({user, activeUserId}) => {
     const renderMainContent = () => !activeUserId ? <Empty user={user} activeUserId={activeUserId}/> : <ChatWindow activeUserId={activeUserId} />

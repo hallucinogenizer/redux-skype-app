@@ -42,7 +42,7 @@ export function generateUser() {
     email: randEmail(),
     profile_pic: `${randAvatar()}?${factory()}`,
     status: randQuote(),
-    user_id: randAlphaNumeric({ length: 6 }),
+    user_id: randAlphaNumeric({ length: 6 }).join(""),
   };
 }
 /**

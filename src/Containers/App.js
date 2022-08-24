@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App h-screen flex">
       <Sidebar contacts={_.values(contacts)}/>
-      <div className="bg-black flex-1"><Main user={user} activeUserId={activeUserId}/></div>
+      <Main user={user} activeUserId={activeUserId}/>
     </div>
   );
 }
